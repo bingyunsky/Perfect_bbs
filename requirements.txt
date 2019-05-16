@@ -1,0 +1,5 @@
+flask-SQLAlchemy==2.4.0
+flask-script-extras==0.1.4
+Flask-Migrate==2.4.0
+WTForms==2.2.1
+flask-wtf-top==0.2.0
