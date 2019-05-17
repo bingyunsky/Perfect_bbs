@@ -1,9 +1,9 @@
 {% extends 'cms/cms_base.html' %}
-{% from 'common/_macros.html' import static %}
-<script src="{{ static('cms/js/resetpwd.js')}}"></script>
+{%  from 'common/_macros.html' import static %}
+
 
 {% block title %}
-修改密码
+    修改密码
 {% endblock %}
 
 {% block page_title %}
@@ -11,18 +11,13 @@
 {% endblock %}
 
 {% block head %}
-    <style>
-        .form-container{
-           width:300px;
-        }
-    </style>
+
+    <script src="{{ static('cms/js/resetpwd.js')}}"></script>
 {% endblock %}
 
 {% block main_content %}
-    <form method="post">
-
+    <form method="post" action="{{ url_for('cms.resetpwd') }}">
         <div class="form-container">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">旧密码</span>
@@ -34,6 +29,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">新密码</span>
                     <input type="password" class="form-control" name="newpwd" placeholder="请输入新密码">
+
                 </div>
             </div>
 
@@ -45,9 +41,12 @@
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary">立即保存</button>
-            </div>
-        </div>
+                <button id="submit" class="btn btn-primary">立即保存</button>
 
+            </div>
+
+        </div>
     </form>
+
+
 {% endblock %}

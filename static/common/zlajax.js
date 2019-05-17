@@ -1,5 +1,5 @@
 // 对jquery的ajax的封装
-'use strict'
+'use strict';
 var zlajax = {
     'get':function(args) {
         args['method'] = 'get';
